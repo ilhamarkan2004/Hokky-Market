@@ -12,7 +12,9 @@
             </div>
             <div class="carousel-inner relative w-full overflow-hidden">
                 <div class="carousel-item active float-left w-full">
+ 1-carousel
                     <img src="build/assets/carousel/1.png" class="block w-full opacity-25"
+
                         alt="Wild Landscape" />
                 </div>
                 <div class="carousel-item float-left w-full">
@@ -68,7 +70,7 @@
                   
 <div class="w-[175px] lg:w-72 xl:w-90 border-slate-100 bg-transparent shadow-lg shadow-slate-700 overflow-hidden">
     <a class="mb-0.5 inline-block" href="#">
-        <img class=" rounded-t-xl overflow-hidden" width="400" height="225" src="{{ asset('storage/'. $barang->fotobarang) }}" alt="product image" />
+        <img class=" rounded-t-xl overflow-hidden" width="400" height="225" src="{{ asset('storage/app/'. $barang->fotobarang) }}" alt="product image" />
     </a>
     <p class="mt-0.5 mb-3 ml-4 py-1 px-2.5 rounded-xl text-slate-800 bg-yellow-500 font-bold inline-block text-xs">NEW</p>
     <div class="px-5 pb-5">
