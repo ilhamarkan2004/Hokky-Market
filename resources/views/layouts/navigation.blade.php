@@ -107,7 +107,7 @@
 <nav class="bg-[#0D0D0D] border-gray-200 px-2 sm:px-4     ">
     <div class="container flex flex-wrap justify-between items-center mx-auto">
         <a href="/" class="flex items-center">
-            <img src="/build/assets/Pink_Neon_Simple_Shop_Logo-removebg-preview.png" class="mr-3 h-20 md:h-32"
+            <img src="/build/assets/logo.png" class="mr-3 h-20 md:h-32"
                 alt="Flowbite Logo" />
             <span class=" judul self-center text-xl font-semibold whitespace-nowrap dark:text-white">Hooky Market</span>
         </a>

@@ -12,14 +12,16 @@
             </div>
             <div class="carousel-inner relative w-full overflow-hidden">
                 <div class="carousel-item active float-left w-full">
-                    <img src="build/assets/carousel/1.png" class="block w-full"
+ 1-carousel
+                    <img src="build/assets/carousel/1.png" class="block w-full opacity-25"
+
                         alt="Wild Landscape" />
                 </div>
                 <div class="carousel-item float-left w-full">
-                    <img src="https://mdbcdn.b-cdn.net/img/new/slides/042.webp" class="block w-full" alt="Camera" />
+                    <img src="build/assets/carousel/2.png" class="block w-full opacity-75" alt="Camera" />
                 </div>
                 <div class="carousel-item float-left w-full">
-                    <img src="https://mdbcdn.b-cdn.net/img/new/slides/043.webp" class="block w-full"
+                    <img src="build/assets/carousel/3.png" class="block w-full opacity-25"
                         alt="Exotic Fruits" />
                 </div>
             </div>
