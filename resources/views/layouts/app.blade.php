@@ -45,13 +45,13 @@
     </style>
 </head>
 
-<body class="font-sans antialiased overflow-x-hidden ">
+<body class="font-sans antialiased overflow-x-hidden  ">
     <div class="min-h-screen bg-[#0D0D0D]">
         @include('layouts.navigation')
 
         <!-- Page Heading -->
         @if (isset($header))
-        <header class="bg-white shadow">
+        <header class="bg-[#0D0D0D] shadow">
             <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
                 {{ $header }}
             </div>
