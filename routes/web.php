@@ -4,6 +4,7 @@ use App\Http\Controllers\KatalogController;
 use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\BarangController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ProdukController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -31,6 +32,7 @@ Route::get('/', function () {
 
 
 Route::resource('/katalog',KatalogController::class);
+Route::resource('/produk',ProdukController::class);
 Route::resource('/kategori',KategoriController::class);
 Route::resource('/barang',BarangController::class);
 // Route::get('/kategori/create',[KategoriController::class,'create'])->name('kategori.create');
