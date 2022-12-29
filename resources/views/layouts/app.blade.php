@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <link rel="icon" href="/build/assets/logo.png" width="1000" height="1000">
+     <link rel="icon" href="/build/assets/logo.png" width="1000" height="1000">
     <link rel="stylesheet" href="fontawesome/css/all.css">
     <script src="https://kit.fontawesome.com/3eeab2f4f4.js" crossorigin="anonymous"></script>
     <script src="https://cdn.tailwindcss.com"></script>
@@ -45,8 +45,8 @@
     </style>
 </head>
 
-<body class="font-sans antialiased overflow-x-hidden">
-    <div class="min-h-screen bg-gray-100">
+<body class="font-sans antialiased overflow-x-hidden ">
+    <div class="min-h-screen bg-[#0D0D0D]">
         @include('layouts.navigation')
 
         <!-- Page Heading -->
