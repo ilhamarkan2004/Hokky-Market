@@ -41,6 +41,8 @@ return new class extends Migration
             $table->id();
             $table->foreignId('user_id')->constrained('users');
             $table->foreignId('barang_id')->constrained('barangs');
+            $table->bigInteger('jumlah');
+            $table->bigInteger('total_harga');
             $table->timestamps();
         });
 
