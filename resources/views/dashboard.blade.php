@@ -17,7 +17,7 @@
                          adipisicing elit. Voluptatem? Lorem ipsum dolor sit amet.Lorem ipsum dolor sit, amet
                          consectetur
                          adipisicing elit. Sequi debitis repellat adipisci fuga velit explicabo.</p>
-                     <form class="container p-2" action="">
+                     <form class="container p-2" action="/produk" method="get">
                          <label for="search"
                              class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-gray-300">Your
                              Email</label>
@@ -31,7 +31,7 @@
                              </div>
                              <input type="search" id="search"
                                  class=" bg-[#0D0D0D] block p-4 pl-10 w-full text-sm text-slate-200  rounded-full border border-gray-300 focus:ring-blue-500 focus:border-blue-500"
-                                 placeholder="Cari Barang" required>
+                                 placeholder="Cari Barang" name="search" required autocomplete="off">
                              <button type="submit"
                                  class="text-slate-900 absolute right-1 bottom-2.5 bg-yellow-300 hover:bg-gray-500 hover:text-yellow-200 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-full text-sm px-4 py-2"><i
                                      class="fa-sharp fa-solid fa-magnifying-glass"></i></button>
@@ -66,7 +66,7 @@
                              class="absolute top-0 left-1/2 -translate-x-1/2 ">
                          <img src="/build/assets/beras.jpg" alt="" class="rounded-full mx-auto w-48">
                          <button
-                             class="p-2 absolute bg-red-400 hover:bg-red-900 hover:text-slate-300 rounded-2xl font-semibold -bottom-72 left-1/2 -translate-x-1/2">Order
+                             class="p-2 absolute text-slate-200 bg-orange-700 hover:bg-red-200 hover:text-slate-800 focus:ring-4 rounded-2xl font-semibold -bottom-72 left-1/2 -translate-x-1/2">Order
                              Now</button>
                      </div>
                      <div
@@ -87,7 +87,7 @@
                              class="absolute top-0 left-1/2 -translate-x-1/2 ">
                          <img src="/build/assets/beras.jpg" alt="" class="rounded-full mx-auto w-48">
                          <button
-                             class="p-2 absolute bg-red-400 hover:bg-red-900 hover:text-slate-300 rounded-2xl font-semibold -bottom-72 left-1/2 -translate-x-1/2">Order
+                             class="p-2 absolute text-slate-200 bg-orange-700 hover:bg-red-200 hover:text-slate-800 focus:ring-4 rounded-2xl font-semibold -bottom-72 left-1/2 -translate-x-1/2">Order
                              Now</button>
                      </div>
                      <div
@@ -108,7 +108,7 @@
                              class="absolute top-0 left-1/2 -translate-x-1/2 ">
                          <img src="/build/assets/beras.jpg" alt="" class="rounded-full mx-auto w-48">
                          <button
-                             class="p-2 absolute bg-red-400 hover:bg-red-900 hover:text-slate-300 rounded-2xl font-semibold -bottom-72 left-1/2 -translate-x-1/2">Order
+                             class="p-2 absolute text-slate-200 bg-orange-700 hover:bg-red-200 hover:text-slate-800 focus:ring-4 rounded-2xl font-semibold -bottom-72 left-1/2 -translate-x-1/2">Order
                              Now</button>
                      </div>
                      <div
@@ -159,7 +159,7 @@
                      </div>
                  </div>
                  <button
-                     class="mt-5 p-2 font-semibold bg-red-400 hover:bg-red-900 hover:text-slate-200 rounded-2xl">About
+                     class="mt-5 p-2 font-semibold text-slate-200 bg-orange-700 hover:bg-red-200 hover:text-slate-800 focus:ring-4 rounded-2xl">About
                      Us</button>
              </div>
          </div>

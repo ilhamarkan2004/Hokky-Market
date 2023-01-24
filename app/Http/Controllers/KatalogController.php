@@ -14,7 +14,7 @@ class KatalogController extends Controller
      */
     public function index()
     {
-       $barangs = Barang::all();
+       $barangs = Barang::with('kategori')->where('stok','>',0)->take(4)->latest()->get();
         return view('katalog',[
             'barangs'=>$barangs
         ]);

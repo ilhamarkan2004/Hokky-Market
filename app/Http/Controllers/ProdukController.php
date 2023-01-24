@@ -12,12 +12,26 @@ class ProdukController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $barangs = Barang::with('kategori')->where('stok','>',0)->take(2)->get();
-        return view('produk',[
+
+            if(!request('search')){
+                $barangs = Barang::with('kategori')->where('stok','>',0)->paginate(28);
+                return view('produk',[
+                'barangs'=>$barangs
+        ]);
+            }else{
+                $cari =  $request->search;
+                $barangs = Barang::where('nama','like','%'. $cari.'%')->paginate(20);
+                return view('produk',[
             'barangs'=>$barangs
         ]);
+            }
+
+
+
+        
+        
     }
 
     /**
