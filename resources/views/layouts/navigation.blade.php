@@ -107,8 +107,7 @@
 <nav class="bg-[#0D0D0D] border-gray-200 px-2 sm:px-4     ">
     <div class="container flex flex-wrap justify-between items-center mx-auto">
         <a href="/" class="flex items-center">
-            <img src="/build/assets/logo.png" class="mr-3 h-20 md:h-32"
-                alt="Flowbite Logo" />
+            <img src="/build/assets/logo.png" class="mr-3 h-20 md:h-32" alt="Flowbite Logo" />
             <span class=" judul self-center text-xl font-semibold whitespace-nowrap dark:text-white">Hooky Market</span>
         </a>
 
@@ -122,8 +121,7 @@
                 @if(Auth::user()->photoprofile == null)
                 <img class="w-8 h-8 rounded-full" src="build/assets/profil/profildefault.jpg" alt="user photo">
                 @else
-                <img class="w-8 h-8 rounded-full" src="{{ asset('storage/'.Auth::user()->photoprofile) }}"
-                    alt="user photo">
+                <img class="w-8 h-8 rounded-full" src="build/assets/profil/profildefault.jpg" alt="user photo">
                 @endif
             </button>
 
@@ -207,12 +205,7 @@
                         class="block py-2 pr-4 pl-3 text-gray-700 rounded hover:bg-gray-100 md:hover:bg- active:text-blue-700 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700 text-lg sm:text-md">Produk</a>
                 </li>
                 <li>
-                    <a href="#"
-                        class="block py-2 pr-4 pl-3 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700 text-lg sm:text-md">Pricing</a>
-                </li>
-                <li>
-                    <a href="#"
-                        class="block py-2 pr-4 pl-3 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700 text-lg sm:text-md">Contact</a>
+
                 </li>
                 <li>
                     <div class="flex md:order-2">
@@ -227,7 +220,7 @@
                             </svg>
                             <span class="sr-only">Search</span>
                         </button>
-                        <div class="relative hidden md:block">
+                        <form class="relative hidden md:block" action="/produk" method="get">
                             <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
                                 <svg class="w-5 h-5 text-gray-500" aria-hidden="true" fill="currentColor"
                                     viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
@@ -239,8 +232,8 @@
                             </div>
                             <input type="text" id="search-navbar"
                                 class="block w-full p-2 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                placeholder="Search...">
-                        </div>
+                                placeholder="Search..." name="search" value="" required>
+                        </form>
                         <button data-collapse-toggle="navbar-search" type="button"
                             class="inline-flex items-center p-2 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
                             aria-controls="navbar-search" aria-expanded="false">
@@ -254,8 +247,16 @@
                         </button>
                     </div>
                 </li>
+                <li class="my-auto">
+                    <a class="block  py-2 pr-4 pl-3 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent active:text-blue-700 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700 text-xl sm:text-md mr-5 "
+                        href="{{route('keranjang.index')}}">
+                        <i class="fa-sharp fa-solid fa-cart-shopping"></i>
+                    </a>
+                </li>
             </ul>
+
         </div>
+
     </div>
 </nav>
 <!-- End Navbar -->
