@@ -94,15 +94,10 @@
                       <div class="badge text-slate-800 bg-yellow-500 font-bold">NEW</div>
                         <h2 class="text-lg font-bold">
                             {{$barang->nama}}
-
                 </h2>
-
-
                 <div class="card-actions justify-end">
-
                     <div class="badge badge-outline">{{$barang->kategori->nama}}</div>
                     <div class="badge badge-outline">Products</div>
-
                 </div>
             </div>
             </a> --}}
