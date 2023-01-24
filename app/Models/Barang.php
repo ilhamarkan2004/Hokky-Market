@@ -14,9 +14,10 @@ class Barang extends Model
     public function kategori(){
         return $this->belongsTo(Kategori::class);
     }
-    public function keranjang(){
-    return $this->belongsTo(Keranjang::class);
-    }
+    public function keranjangs()
+    {
+        return $this->belongsToMany(Keranjang::class, 'detail_keranjang')->withPivot('jumlah', 'total_harga');
+}
     public function review(){
         return $this->hasMany(Review::class);
     }
