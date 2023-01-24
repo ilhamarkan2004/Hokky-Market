@@ -95,7 +95,6 @@
                         <h2 class="text-lg font-bold">
                             {{$barang->nama}}
 
-
                 </h2>
 
 
@@ -144,5 +143,4 @@
     </div>
     </div>
     </div>
-
 </x-app-layout>
