@@ -30,10 +30,6 @@ class ProfileController extends Controller
      */
     public function update(ProfileUpdateRequest $request)
     {
-         $request->validate([
-            'photoprofile' => [ 'image', 'mimes:jpg,png,jpeg,svg'],
-            
-        ]);
         $request->user()->fill($request->validated());
        
 
@@ -44,9 +40,6 @@ class ProfileController extends Controller
             $request->user()->email_verified_at = null;
         }
 
-        if ($request->hasFile('photoprofile')) {
-            $request->photoprofile = $validateData['photoprofile'];
-        }
 
         $request->user()->save();
 
