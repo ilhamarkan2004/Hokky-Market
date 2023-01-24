@@ -1,6 +1,6 @@
 <x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+    <x-slot name="header" class="bg-[#0D0D0D]">
+        <h2 class="font-semibold text-xl text-white leading-tight">
             {{ __('Tambah Kategori') }}
         </h2>
     </x-slot>

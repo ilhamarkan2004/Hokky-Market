@@ -1,18 +1,18 @@
 <x-app-layout class="overflow-x-hidden">
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+    <x-slot name="header" class="bg-[#0D0D0D] ">
+        <h2 class="font-semibold text-xl text-white  leading-tight">
             {{ __('List Barang') }}
         </h2>
     </x-slot>
 
-    <div class="py-12">
+    <div class="py-12 bg-[#0D0D0D] ">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+            <div class="bg-[#0D0D0D] overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900">
                     <a href="{{route('barang.create')}}" class="text-md font-semibold text-black p-2 rounded-md bg-green-500 "><span class="font-extrabold text-lg">+</span> Tambah</a>
-                    <table class="table-auto w-full mt-5">
-                        <thead>
-                            <tr class="bg-gray-300 text-gray-700">
+                    <table class="table-auto w-full mt-5 border">
+                        <thead class="border">
+                            <tr class="bg-[#0D0D0D] text-white">
                                 <th class="px-4 py-2 text-center">No</th>
                                 <th class="px-4 py-2 text-center">Nama Barang</th>
                                 <th class="px-4 py-2 text-center">Stok</th>
@@ -20,9 +20,9 @@
 
                             </tr>
                         </thead>
-                        <tbody>
+                        <tbody class="border">
                             @foreach ($barangs as $barang)
-                            <tr class="text-gray-700 hover:bg-gray-200">
+                            <tr class="text-white ">
                                 <td class="px-4 py-2 text-center">{{$barang->id}}</td>
                                 <td class="px-4 py-2 text-center">{{$barang->nama}}</td>
                                 <td class="px-4 py-2 text-center">{{$barang->stok}}</td>

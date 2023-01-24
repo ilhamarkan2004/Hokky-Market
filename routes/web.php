@@ -3,7 +3,10 @@
 use App\Http\Controllers\KatalogController;
 use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\BarangController;
+use App\Http\Controllers\PhotoController;
+use App\Http\Controllers\KeranjangController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ProdukController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -31,8 +34,14 @@ Route::get('/', function () {
 
 
 Route::resource('/katalog',KatalogController::class);
-Route::resource('/kategori',KategoriController::class);
-Route::resource('/barang',BarangController::class);
+Route::post('/keranjang',[KeranjangController::class, 'store'])->middleware('auth')->name('keranjang.store');
+Route::post('/keranjang',[KeranjangController::class, 'store'])->middleware('auth')->name('keranjang.store');
+Route::resource('/photo',PhotoController::class)->middleware('auth');
+Route::resource('keranjang', KeranjangController::class)->middleware('auth')->except(['store','create','edit','update']);
+// Route::get('/keranjang',[KeranjangController::class, 'index']);
+Route::resource('/kategori',KategoriController::class)->middleware('auth');
+Route::resource('/barang',BarangController::class)->middleware('auth');
+Route::resource('/produk',ProdukController::class);
 // Route::get('/kategori/create',[KategoriController::class,'create'])->name('kategori.create');
 // Route::post('/kategori/store',[KategoriController::class,'store'])->name('kategori.store');
 // Route::get('/kategori/edit/{kategori}',[KategoriController::class,'edit'])->name('kategori.edit');

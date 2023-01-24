@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Barang;
-use Illuminate\Http\Request;
+use App\Models\DetailKeranjang;
+use App\Http\Requests\StoreDetailKeranjangRequest;
+use App\Http\Requests\UpdateDetailKeranjangRequest;
 
-class KatalogController extends Controller
+class DetailKeranjangController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,10 +15,7 @@ class KatalogController extends Controller
      */
     public function index()
     {
-       $barangs = Barang::with('kategori')->where('stok','>',0)->take(4)->latest()->get();
-        return view('katalog',[
-            'barangs'=>$barangs
-        ]);
+        //
     }
 
     /**
@@ -33,10 +31,10 @@ class KatalogController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Http\Requests\StoreDetailKeranjangRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreDetailKeranjangRequest $request)
     {
         //
     }
@@ -44,10 +42,10 @@ class KatalogController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\DetailKeranjang  $detailKeranjang
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(DetailKeranjang $detailKeranjang)
     {
         //
     }
@@ -55,10 +53,10 @@ class KatalogController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\DetailKeranjang  $detailKeranjang
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(DetailKeranjang $detailKeranjang)
     {
         //
     }
@@ -66,11 +64,11 @@ class KatalogController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Http\Requests\UpdateDetailKeranjangRequest  $request
+     * @param  \App\Models\DetailKeranjang  $detailKeranjang
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(UpdateDetailKeranjangRequest $request, DetailKeranjang $detailKeranjang)
     {
         //
     }
@@ -78,10 +76,10 @@ class KatalogController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Models\DetailKeranjang  $detailKeranjang
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(DetailKeranjang $detailKeranjang)
     {
         //
     }

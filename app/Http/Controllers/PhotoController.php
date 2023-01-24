@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Barang;
+use App\Models\User;
+
+use Illuminate\Support\Facades\Auth;
+use App\Http\Requests\ProfileUpdateRequest;
 use Illuminate\Http\Request;
 
-class KatalogController extends Controller
+class PhotoController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,10 +17,7 @@ class KatalogController extends Controller
      */
     public function index()
     {
-       $barangs = Barang::with('kategori')->where('stok','>',0)->take(4)->latest()->get();
-        return view('katalog',[
-            'barangs'=>$barangs
-        ]);
+        //
     }
 
     /**
@@ -70,9 +70,35 @@ class KatalogController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, User $user)
     {
-        //
+        // // $orang=User::where('id',$user);
+        // dd($orang);
+         $validateData = $request->validate([
+        'photoprofile' => 'required|image|mimes:png,jpg,jpeg,svg',
+    ]);
+    $photoprofile = $request->file('photoprofile')->store('photoprofile');
+    $user->photoprofile = $photoprofile;
+    $user->name = Auth::user()->name;
+    $user->email = Auth::user()->email;
+    $user->password = Auth::user()->password;
+    $user->photoprofile = $validateData['photoprofile'];
+    $user->update();
+    return redirect()->back();
+        // $validateData = $request->validate([
+        //     'photoprofile' => 'required|image|mimes:png,jpg,jpeg,svg',
+            
+        // ]);
+        
+        //     $validateData['photoprofile'] = $request->file('photoprofile')->store('photoprofile');
+        //     $user->update([
+        //          'name' => Auth::user()->name,
+        //          'email' => Auth::user()->email,
+        //          'role' => Auth::user()->role,
+        //          'password' => Auth::user()->password,
+        //          'photoprofile' => $validateData['photoprofile'],
+        //     ]);
+        //     return redirect()-> back();
     }
 
     /**

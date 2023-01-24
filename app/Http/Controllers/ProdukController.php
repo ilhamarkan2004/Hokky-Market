@@ -5,19 +5,33 @@ namespace App\Http\Controllers;
 use App\Models\Barang;
 use Illuminate\Http\Request;
 
-class KatalogController extends Controller
+class ProdukController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-       $barangs = Barang::with('kategori')->where('stok','>',0)->take(4)->latest()->get();
-        return view('katalog',[
+
+            if(!request('search')){
+                $barangs = Barang::with('kategori')->where('stok','>',0)->paginate(28);
+                return view('produk',[
+                'barangs'=>$barangs
+        ]);
+            }else{
+                $cari =  $request->search;
+                $barangs = Barang::where('nama','like','%'. $cari.'%')->paginate(20);
+                return view('produk',[
             'barangs'=>$barangs
         ]);
+            }
+
+
+
+        
+        
     }
 
     /**
@@ -49,7 +63,10 @@ class KatalogController extends Controller
      */
     public function show($id)
     {
-        //
+         $produk = Barang::where('id', $id)->first();
+        return view('detailproduk',[
+            'produk' => $produk
+        ]);
     }
 
     /**
