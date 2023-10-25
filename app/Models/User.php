@@ -43,4 +43,11 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+     public static function factory(...$parameters)
+    {
+        return parent::factory(...$parameters)->state([
+            'photoprofile' => 'default.jpg', // tambahkan baris ini
+        ]);
+    }
 }

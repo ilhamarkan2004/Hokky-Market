@@ -5,6 +5,7 @@ use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\BarangController;
 use App\Http\Controllers\PhotoController;
 use App\Http\Controllers\KeranjangController;
+use App\Http\Controllers\PemesananController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ProdukController;
 use Illuminate\Support\Facades\Auth;
@@ -29,7 +30,7 @@ Route::get('/', function () {
          return view('admin.index');
     }
     
-});
+})->name('index');
 
 
 
@@ -40,6 +41,7 @@ Route::resource('/photo',PhotoController::class)->middleware('auth');
 Route::resource('keranjang', KeranjangController::class)->middleware('auth')->except(['store','create','edit','update']);
 // Route::get('/keranjang',[KeranjangController::class, 'index']);
 Route::resource('/kategori',KategoriController::class)->middleware('auth');
+Route::resource('/pemesanan',PemesananController::class)->middleware('auth');
 Route::resource('/barang',BarangController::class)->middleware('auth');
 Route::resource('/produk',ProdukController::class);
 // Route::get('/kategori/create',[KategoriController::class,'create'])->name('kategori.create');

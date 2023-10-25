@@ -39,7 +39,6 @@ $barangs = DB::table('barangs')
 ->select('barangs.*', 'detail_keranjangs.jumlah', 'detail_keranjangs.total_harga')
 ->get();
 $keranjang = Keranjang::where('user_id',$user_id)->first();
-    // dd($barangs);
     // $barangs = $keranjang->barang;
     return view('keranjang', ['barangs' => $barangs,'keranjang'=>$keranjang]);
 
@@ -97,9 +96,10 @@ $keranjang = Keranjang::where('user_id',$user_id)->first();
     public function store(Request $request)
     {
        
-     
+
 
         $barang = Barang::find($request->id);
+
         $user_id = Auth::user()->id;
 
         // Check if user already have cart
@@ -108,12 +108,6 @@ $keranjang = Keranjang::where('user_id',$user_id)->first();
 
         // If user already have cart
         if ($keranjang) {
-//             $total_harga = DB::table('detail_keranjangs')
-//                 ->where('keranjang_id', $keranjang->id)
-//                 ->sum('total_harga');
-//             DB::table('keranjangs')
-// ->where('id', $keranjang->id)
-// ->update(['total_harga' => $total_harga]);
 
 
             // Check if item already in cart

@@ -14,9 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->enum('role', array('admin', 'customer'))->default('customer');
-            $table->string('photoprofile')->default('default.jpg');
-            
+            //
         });
     }
 
@@ -28,8 +26,7 @@ return new class extends Migration
     public function down()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->dropColumn('role');
-            $table->dropColumn('photoprofile');
+            //
         });
     }
 };

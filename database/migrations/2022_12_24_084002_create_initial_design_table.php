@@ -19,29 +19,6 @@ return new class extends Migration
             $table->string('nama');
             $table->timestamps();
         });
-        //     Schema::create('barangs', function (Blueprint $table) {
-        //     $table->id();
-        //     $table->string('nama');
-        //     $table->foreignId('kategori_id')->constrained('kategoris');
-        //     $table->string('fotobarang');
-        //     $table->text('deskripsi');
-        //     $table->bigInteger('stok');
-        //     $table->bigInteger('harga');
-        //     $table->timestamps();
-        // });
-        //  Schema::create('keranjangs', function (Blueprint $table) {
-        //     $table->id();
-        //     $table->foreignId('user_id')->constrained('users');
-        //     $table->timestamps();
-        // });
-        //  Schema::create('detail_keranjangs', function (Blueprint $table) {
-        //     $table->id();
-        //     $table->foreignId('keranjang_id')->constrained('keranjangs');
-        //     $table->foreignId('barang_id')->constrained('barangs');
-        //     $table->bigInteger('jumlah');
-        //     $table->bigInteger('total_harga');
-        //     $table->timestamps();
-        // });
            Schema::create('barangs', function (Blueprint $table) {
             $table->id();
             $table->string('nama');
@@ -83,7 +60,9 @@ return new class extends Migration
             $table->id();
             // // $table->foreignId('keranjang_id')->constrained('keranjangs');
             $table->string('alamat');
-            $table->string('total_harga');
+            $table->bigInteger('biaya_pengiriman')->default(5000);
+            $table->bigInteger('total_produk');
+            $table->bigInteger('biaya_total');
             $table->string('no_hp');
             $table->unsignedBigInteger('keranjang_id');
             $table->foreign('keranjang_id')->references('id')->on('keranjangs')->onDelete('cascade');
